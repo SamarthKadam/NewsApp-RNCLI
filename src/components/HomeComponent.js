@@ -3,8 +3,8 @@ import React,{useState}from 'react'
 import Header from './Header'
 import Tabs from './Tabs'
 import MidHead from './MidHead'
-import { useSelector } from 'react-redux'
-import CardContainer from './CardContainer'
+import CardContainerTop from './CardContainerTop'
+import CardContainerBottom from './CardContainerBottom'
 
 const windowHeight = Dimensions.get('window').height;
 let value=Math.round(windowHeight)
@@ -25,9 +25,9 @@ export default function HomeComponent({value}) {
     <Header></Header>
     <Tabs></Tabs>
     <MidHead key={1} title='Trending'></MidHead>
-    <CardContainer key={1} data={firstHalf}></CardContainer>
+    <CardContainerTop data={firstHalf}></CardContainerTop>
     <MidHead key={2} title='Latest'></MidHead>
-    <CardContainer key={2} data={secondHalf}></CardContainer>
+    <CardContainerBottom data={secondHalf}></CardContainerBottom>
   </View>
   )
 }

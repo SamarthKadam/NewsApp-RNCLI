@@ -1,9 +1,5 @@
-import { View, Text, StatusBar,StyleSheet,Dimensions} from 'react-native'
+
 import React,{useEffect} from 'react'
-import Header from '../components/Header'
-import Tabs from '../components/Tabs'
-import MidHead from '../components/MidHead'
-import CardContainer from '../components/CardContainer'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { category } from '../helper/Category'

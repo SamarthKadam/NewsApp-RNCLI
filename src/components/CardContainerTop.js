@@ -3,7 +3,7 @@ import React,{useRef,useEffect} from 'react'
 import Card from './Card';
 import { ScrollView } from 'react-native';
 import Loading from '../utils/Loading';
-export default function CardContainer({data}) {
+export default function CardContainerTop({data}) {
 
   const scrollRef=useRef();
   useEffect(()=>{
@@ -14,9 +14,8 @@ export default function CardContainer({data}) {
   return (
       <ScrollView ref={scrollRef} showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scroll}>
     <View style={styles.container}>
-      {!data&&<Loading></Loading>}
-      {data&&data.map((val,id)=>{
-       const date=new Date().getTime();
+      {data.length===0&&<Loading></Loading>}
+      {data.length>0&&data.map((val,id)=>{
       return <Card key={val.url} val={val}></Card>
       })}
     </View>

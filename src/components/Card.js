@@ -33,13 +33,19 @@ const styles=StyleSheet.create({
         // width:'65%',
         width:215,
         height:180,
-        // justifyContent:'center',
+        justifyContent:'center',
         alignItems:'center',
         marginHorizontal:10,
+        backgroundColor:'green',
+        borderRadius:10,
+        backgroundColor:Colors.light,
+        paddingHorizontal:6,
+        paddingVertical:6
     },
     imgsetting:{
         height:100,
         width:200,
+        alignSelf:'center',
         borderRadius:10
     },
     bcontainer:{
