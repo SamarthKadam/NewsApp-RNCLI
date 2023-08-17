@@ -2,21 +2,19 @@ import { View, Text,StyleSheet} from 'react-native'
 import React from 'react'
 import Card from './Card';
 import { ScrollView } from 'react-native';
+import { useSelector } from 'react-redux';
 
 export default function CardContainer({val}) {
 
+  const data=useSelector((store)=>store.data);
 
-  function getData()
-  {
-    let value;
-    fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=5168839b926d49db9fb9cef9792190e7').then((res)=>res.json()).then((data)=>{
-      value=data.articles;
-      value.length-=88;
-      console.log(value);
-    });
-  }
+  console.log("this are the values")
+  console.log(data.All?.length);
+  console.log(data.Business?.length);
+  console.log(data.Crypto?.length);
+  console.log(data.Technology?.length);
+  console.log(data.nature?.length);
 
-  // getData();
 
   return (
       <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scroll}>

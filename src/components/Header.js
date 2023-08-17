@@ -12,8 +12,6 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 export default function Header() {
 
-  const data=useSelector((data)=>data.count.count);
-  console.log(data);
     const date=new Date();
 
 

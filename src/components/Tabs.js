@@ -3,9 +3,12 @@ import React from 'react'
 import { ScrollView } from 'react-native'
 import { Chip } from 'react-native-paper'
 import {useState} from 'react'
+import { useDispatch } from 'react-redux'
+import { setTab } from '../redux/actions/operateAction'
 
 export default function Tabs() {
 
+    const dispatch=useDispatch();
     const [activeTab,setActiveTab]=useState([true,false,false,false,false]);
 
     function TabHandler(value)
@@ -13,6 +16,7 @@ export default function Tabs() {
         let tabval=[false,false,false,false,false];
         tabval[value]=true;
         setActiveTab(tabval);
+        dispatch(setTab(value));
     }
 
 

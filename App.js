@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -23,12 +23,26 @@ import { PaperProvider } from 'react-native-paper';
 import { Provider } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {store} from './src/redux/store'
-
+import { AllNews } from './src/helper/Api';
 const Stack=createStackNavigator();
 
 function App() {
 
   StatusBar.setBackgroundColor('white')
+
+  // useEffect(()=>{
+  //   const url=AllNews('in');
+  //   fetch(url).then((res)=>res.json()).then((data)=>{
+
+  //     let fetcdat=data.articles;
+  //     fetcdat.length=4;
+  //     console.log(fetcdat);
+  //   })
+
+  // },[])
+
+
+
 
   return (
     <Provider store={store}>

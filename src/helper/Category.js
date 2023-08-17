@@ -1,0 +1,1 @@
+export const category=['All','Business','Crypto','Technology','Nature'];
