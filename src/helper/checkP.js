@@ -7,7 +7,7 @@ export const checkPresent=(type,data)=>{
     return true;
     else if(type==='Technology'&&data.Technology!==null)
     return true;
-    else if(type==='Nature'&&data.nature!==null)
+    else if(type==='Nature'&&data.Nature!==null)
     return true;
 
     return false;

@@ -43,7 +43,7 @@ const styles=StyleSheet.create({
         alignItems:'flex-start',
     },
     scrollelem:{
-        marginTop:'4%',
+        marginTop:'3%',
         width:'95%',
         paddingBottom:'4%',
     },

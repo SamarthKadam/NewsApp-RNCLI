@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <View>
-    <Appbar.Header>
+    <Appbar.Header style={{backgroundColor:'white'}}>
        <Appbar.Content titleStyle={{color:Colors.primary,fontWeight:'700',fontSize:26,fontFamily:"Roboto"}} title="News" />
        <Appbar.Action size={30} icon="bell-ring-outline"  onPress={()=>{}} />
     </Appbar.Header>
@@ -38,7 +38,7 @@ const styles=StyleSheet.create({
         color:'grey'
     },
     searchelem:{
-        marginTop:'4%',
+        marginTop:'2%',
         backgroundColor:'#F5F5F5'
     }
 })

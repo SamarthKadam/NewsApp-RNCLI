@@ -4,23 +4,25 @@ import { Colors } from '../../assets/fonts/colors/Colors';
 
 export default function Card({val}) {
 
-
-
-    let temp='https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/76f95899df261776c441932b344183f1.jpg'
-    if(val==1)
-    {
-      temp='https://i.insider.com/64bebc9fbea3440019602937?width=1200&format=jpeg'
-    }
-
+  if(val.urlToImage===null)
+  {
+    val.urlToImage='https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?w=2000'
+  }
+  let issliced=0;
+  if(val.title.length>70)
+  {
+    val.title=val.title.slice(0,90)
+    issliced=1;
+  }
 
     return (
       <View style={styles.container}>
       <View>
-        <Image style={styles.imgsetting} source={{uri:temp}}></Image>
-      <Text style={styles.boldText}>Ukraine conflict:kyiv braces for a Russian assault</Text>
+        <Image style={styles.imgsetting} source={{uri:val.urlToImage}}></Image>
+      <Text style={styles.boldText}>{val.title}{issliced&&'......'}</Text>
       <View style={styles.bcontainer}>
         <Text style={styles.smText}>World</Text>
-        <Text style={styles.smText}>Ema roth</Text>
+        <Text style={styles.smText}>{val.author}</Text>
       </View>
       </View>
     </View>
@@ -30,26 +32,26 @@ const styles=StyleSheet.create({
     container:{
         // width:'65%',
         width:215,
-        // backgroundColor:'green'
-        justifyContent:'center',
+        height:180,
+        // justifyContent:'center',
         alignItems:'center',
-        marginHorizontal:10
+        marginHorizontal:10,
     },
     imgsetting:{
-        height:120,
-        width:220,
+        height:100,
+        width:200,
         borderRadius:10
     },
     bcontainer:{
         flexDirection:'row',
         justifyContent:'space-between',
-        marginTop:10
+        marginTop:5,
     },
     boldText:{
-      marginTop:10,
+      marginTop:5,
       fontSize:13,
       color:'black',
-      fontWeight:'bold'
+      fontWeight:'bold',
     },
     smText:{
       fontSize:10,

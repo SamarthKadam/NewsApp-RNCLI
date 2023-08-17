@@ -13,7 +13,7 @@ export default function MidHead({title}) {
 const styles=StyleSheet.create({
     container:{
         flexDirection:'row',
-        marginTop:'4%',
+        marginTop:'2%',
         justifyContent:'space-between'
     }
 })

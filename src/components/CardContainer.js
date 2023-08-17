@@ -1,27 +1,24 @@
 import { View, Text,StyleSheet} from 'react-native'
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
 import Card from './Card';
 import { ScrollView } from 'react-native';
-import { useSelector } from 'react-redux';
+import Loading from '../utils/Loading';
+export default function CardContainer({data}) {
 
-export default function CardContainer({val}) {
-
-  const data=useSelector((store)=>store.data);
-
-  console.log("this are the values")
-  console.log(data.All?.length);
-  console.log(data.Business?.length);
-  console.log(data.Crypto?.length);
-  console.log(data.Technology?.length);
-  console.log(data.nature?.length);
+  const scrollRef=useRef();
+  useEffect(()=>{
+    scrollRef.current?.scrollTo({x:0,animated:true})
+  },[data])
 
 
   return (
-      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scroll}>
+      <ScrollView ref={scrollRef} showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scroll}>
     <View style={styles.container}>
-      <Card val={val}></Card>
-      <Card val={val}></Card>
-      <Card val={val}></Card>
+      {!data&&<Loading></Loading>}
+      {data&&data.map((val,id)=>{
+       const date=new Date().getTime();
+      return <Card key={val.url} val={val}></Card>
+      })}
     </View>
       </ScrollView>
   )

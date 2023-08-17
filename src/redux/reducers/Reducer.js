@@ -6,7 +6,7 @@ const initialState = {
     Business:null,
     Crypto:null,
     Technology:null,
-    nature:null
+    Nature:null
   };
    
   export default (state = initialState, action) => {
@@ -42,7 +42,7 @@ const initialState = {
       case 'SETNATURE':
         return {
           ...state,
-          nature:action.payload
+          Nature:action.payload
         };
       default:
         return state;
