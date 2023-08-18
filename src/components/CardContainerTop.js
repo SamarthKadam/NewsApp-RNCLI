@@ -14,8 +14,8 @@ export default function CardContainerTop({data}) {
   return (
       <ScrollView ref={scrollRef} showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scroll}>
     <View style={styles.container}>
-      {data.length===0&&<Loading></Loading>}
-      {data.length>0&&data.map((val,id)=>{
+      {!data&&<Loading></Loading>}
+      {data&&data.map((val,id)=>{
       return <Card key={val.url} val={val}></Card>
       })}
     </View>

@@ -1,8 +1,10 @@
-import { View, Text,StyleSheet,Image} from 'react-native'
+import { View, Text,StyleSheet,Image,Pressable} from 'react-native'
 import React from 'react'
 import { Colors } from '../../assets/fonts/colors/Colors';
-
+import { useNavigation } from '@react-navigation/native';
 export default function Card({val}) {
+
+  const navigation=useNavigation();
 
   if(val.urlToImage===null)
   {
@@ -15,17 +17,27 @@ export default function Card({val}) {
     issliced=1;
   }
 
+
+  function handlePress()
+  {
+    navigation.navigate('Overview',{data:val});
+  }
+
+
+
+
+
     return (
-      <View style={styles.container}>
+        <Pressable style={styles.container} android_ripple={{color:"rgba(0, 0, 0, .12)"}} onPress={handlePress}>
       <View>
         <Image style={styles.imgsetting} source={{uri:val.urlToImage}}></Image>
-      <Text style={styles.boldText}>{val.title}{issliced&&'......'}</Text>
+      <Text style={styles.boldText}>{val.title}{issliced?'......':''}</Text>
       <View style={styles.bcontainer}>
         <Text style={styles.smText}>World</Text>
         <Text style={styles.smText}>{val.author}</Text>
       </View>
       </View>
-    </View>
+      </Pressable>
   )
 }
 const styles=StyleSheet.create({
@@ -36,11 +48,11 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         marginHorizontal:10,
-        backgroundColor:'green',
+        overflow:'hidden',
         borderRadius:10,
+        paddingHorizontal:4,
+        paddingVertical:4,
         backgroundColor:Colors.light,
-        paddingHorizontal:6,
-        paddingVertical:6
     },
     imgsetting:{
         height:100,

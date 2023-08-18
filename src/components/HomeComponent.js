@@ -22,7 +22,7 @@ export default function HomeComponent({value}) {
   return (
     <View style={styles.container}>
     <StatusBar barStyle="dark-content"></StatusBar>
-    <Header></Header>
+    <Header ishome={true}></Header>
     <Tabs></Tabs>
     <MidHead key={1} title='Trending'></MidHead>
     <CardContainerTop data={firstHalf}></CardContainerTop>

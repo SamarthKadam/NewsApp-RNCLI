@@ -1,18 +1,28 @@
-import { View,StyleSheet} from 'react-native'
+import { View,StyleSheet,Pressable,Keyboard} from 'react-native'
 import React from 'react'
 import { Appbar } from 'react-native-paper';
 import { Text } from 'react-native-paper';
 import { Searchbar } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { Colors } from '../../assets/fonts/colors/Colors';
+import { useNavigation } from '@react-navigation/native';
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-export default function Header() {
+export default function Header({ishome}) {
 
+   const navigation=useNavigation();
     const date=new Date();
+
+    function touched()
+    {
+      if(ishome==true)
+      {
+        navigation.navigate("Search");
+      }
+    }
 
 
 
@@ -24,10 +34,11 @@ export default function Header() {
     </Appbar.Header>
     <Text style={styles.dateelem}>Today,{monthNames[date.getMonth()]}{date.getDate()}th</Text>
     <Searchbar
+    onFocus={()=>Keyboard.dismiss()}
     style={styles.searchelem}
     placeholderTextColor='grey'
-      placeholder="Search News"
-      onChangeText={()=>{}}
+    placeholder="Search News"
+    onTouchStart={touched}
     />
     </View>
   )

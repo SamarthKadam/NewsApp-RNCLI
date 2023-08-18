@@ -15,6 +15,7 @@ export default function Loading() {
 const styles=StyleSheet.create({
     container:{
         width:value,
+        height:'100%',
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center'
