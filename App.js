@@ -45,8 +45,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator  screenOptions={{headerShown:false,presentation:"modal"}}>
         <Stack.Screen  name='Home' component={Home}></Stack.Screen>
-        <Stack.Screen options={{headerShown:true}} name='Overview' component={Overview}></Stack.Screen>
-        <Stack.Screen name='Search' component={Search}></Stack.Screen>
+        <Stack.Screen options={{headerShown:true,headerTintColor:'black',headerBackTitleStyle:{color:'green'}}} name='Overview' component={Overview}></Stack.Screen>
+        <Stack.Screen options={{headerShown:true,headerTintColor:'black'}} name='Search' component={Search}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>

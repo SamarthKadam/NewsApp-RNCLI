@@ -1,9 +1,8 @@
-import { View,StyleSheet,Pressable,Keyboard} from 'react-native'
+import { View,StyleSheet,Alert} from 'react-native'
 import React from 'react'
 import { Appbar } from 'react-native-paper';
 import { Text } from 'react-native-paper';
 import { Searchbar } from 'react-native-paper';
-import { useSelector } from 'react-redux';
 import { Colors } from '../../assets/fonts/colors/Colors';
 import { useNavigation } from '@react-navigation/native';
 
@@ -26,15 +25,15 @@ export default function Header({ishome}) {
 
 
 
+
   return (
     <View>
     <Appbar.Header style={{backgroundColor:'white'}}>
        <Appbar.Content titleStyle={{color:Colors.primary,fontWeight:'700',fontSize:26,fontFamily:"Roboto"}} title="News" />
-       <Appbar.Action size={30} icon="bell-ring-outline"  onPress={()=>{}} />
+       <Appbar.Action size={30} icon="bell-ring-outline"  onPress={()=>{Alert.alert('All caught up ✅')}} />
     </Appbar.Header>
     <Text style={styles.dateelem}>Today,{monthNames[date.getMonth()]}{date.getDate()}th</Text>
     <Searchbar
-    onFocus={()=>Keyboard.dismiss()}
     style={styles.searchelem}
     placeholderTextColor='grey'
     placeholder="Search News"

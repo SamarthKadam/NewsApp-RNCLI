@@ -26,7 +26,7 @@ export default function CardContainerBottom({data}) {
 const styles=StyleSheet.create({
     container:{
       flexDirection:'row',
-      alignItems:'flex-start'
+      alignItems:'center',
     },
     scroll:{
       marginTop:'4%',

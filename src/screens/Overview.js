@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet,ImageBackground,Dimensions,Pressable,Linking,Alert} from 'react-native'
+import { View, Text,StyleSheet,ImageBackground,Dimensions,Pressable,Linking} from 'react-native'
 import React from 'react'
 import { Avatar } from 'react-native-paper';
 import { Link, useRoute } from '@react-navigation/native'
@@ -14,10 +14,10 @@ export default function Overview({}) {
   async function handlePress()
   {
     const supported=await Linking.canOpenURL(data.url);
-    if(supported)
+    // if(supported)
     await Linking.openURL(data.url)
-    else
-     Alert.alert(`Cant open this URL:${data.url}`)
+    // else
+    //  Alert.alert(`Cant open this URL:${data.url}`)
   }
 
   return (
@@ -87,7 +87,7 @@ const styles=StyleSheet.create({
   description:{
     // paddingHorizontal:'4%',
     fontSize:18,
-    lineHeight:35,
+    lineHeight:30,
     fontFamily:'serif',
     color:'grey',
     marginTop:'5%'

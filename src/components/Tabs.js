@@ -19,21 +19,16 @@ export default function Tabs() {
         dispatch(setTab(value));
     }
 
-
-
-
-
-
-
     return (
     <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollelem}>
     <View style={styles.container}>
-    <Chip   selected={activeTab[0]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() =>{TabHandler(0)}}>All</Chip>
-    <Chip  selected={activeTab[1]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() =>{TabHandler(1)}}>Business</Chip>
-    <Chip  selected={activeTab[2]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(2)}}>Crypto</Chip>
-    <Chip selected={activeTab[3]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(3)}}>Technology</Chip>
-    <Chip  selected={activeTab[4]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(4)}}>Nature</Chip>
+    <Chip selectedColor='blue' selected={activeTab[0]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() =>{TabHandler(0)}}>All</Chip>
+    <Chip selectedColor='blue'  selected={activeTab[1]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() =>{TabHandler(1)}}>Business</Chip>
+    <Chip  selectedColor='blue' selected={activeTab[2]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(2)}}>Crypto</Chip>
+    <Chip selectedColor='blue' selected={activeTab[3]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(3)}}>Technology</Chip>
+    <Chip selectedColor='blue'  selected={activeTab[4]} textStyle={{color:'grey'}} style={styles.chipelem} onPress={() => {TabHandler(4)}}>Nature</Chip>
     </View>
+    
     </ScrollView>
   )
 }

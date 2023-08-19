@@ -13,8 +13,12 @@ export default function Card({val}) {
   let issliced=0;
   if(val.title.length>70)
   {
-    val.title=val.title.slice(0,90)
+    val.title=val.title.slice(0,80)
     issliced=1;
+  }
+  if(val.author?.length>25)
+  {
+    val.author=val.author.slice(0,25)
   }
 
 
@@ -34,7 +38,7 @@ export default function Card({val}) {
       <Text style={styles.boldText}>{val.title}{issliced?'......':''}</Text>
       <View style={styles.bcontainer}>
         <Text style={styles.smText}>World</Text>
-        <Text style={styles.smText}>{val.author}</Text>
+        <Text style={styles.smText}>{val.author?val.author:'unknown'}</Text>
       </View>
       </View>
       </Pressable>
@@ -44,14 +48,13 @@ const styles=StyleSheet.create({
     container:{
         // width:'65%',
         width:215,
-        height:180,
         justifyContent:'center',
         alignItems:'center',
         marginHorizontal:10,
         overflow:'hidden',
         borderRadius:10,
-        paddingHorizontal:4,
-        paddingVertical:4,
+        paddingHorizontal:10,
+        paddingVertical:10,
         backgroundColor:Colors.light,
     },
     imgsetting:{
