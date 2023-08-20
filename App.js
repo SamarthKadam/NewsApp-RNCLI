@@ -19,25 +19,12 @@ import { useSelector } from 'react-redux';
 import {store} from './src/redux/store'
 import { AllNews } from './src/helper/Api';
 import Search from './src/screens/Search';
+import MoreStuff from './src/screens/MoreStuff';
 const Stack=createStackNavigator();
 
 function App() {
 
   StatusBar.setBackgroundColor('white')
-
-  // useEffect(()=>{
-  //   const url=AllNews('in');
-  //   fetch(url).then((res)=>res.json()).then((data)=>{
-
-  //     let fetcdat=data.articles;
-  //     fetcdat.length=4;
-  //     console.log(fetcdat);
-  //   })
-
-  // },[])
-
-
-
 
   return (
     <Provider store={store}>
@@ -47,6 +34,7 @@ function App() {
         <Stack.Screen  name='Home' component={Home}></Stack.Screen>
         <Stack.Screen options={{headerShown:true,headerTintColor:'black',headerBackTitleStyle:{color:'green'}}} name='Overview' component={Overview}></Stack.Screen>
         <Stack.Screen options={{headerShown:true,headerTintColor:'black'}} name='Search' component={Search}></Stack.Screen>
+        <Stack.Screen options={{headerShown:true,headerTintColor:'black'}} name='More' component={MoreStuff}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>

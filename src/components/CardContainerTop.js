@@ -2,8 +2,11 @@ import { View, Text,StyleSheet} from 'react-native'
 import React,{useRef,useEffect} from 'react'
 import Card from './Card';
 import { ScrollView } from 'react-native';
+import { useSelector } from 'react-redux';
 import Loading from '../utils/Loading';
 export default function CardContainerTop({data}) {
+
+
 
   const scrollRef=useRef();
   useEffect(()=>{

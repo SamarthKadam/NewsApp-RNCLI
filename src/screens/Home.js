@@ -6,17 +6,15 @@ import { category } from '../helper/Category'
 import { AllNews,getNews} from '../helper/Api'
 import { checkPresent } from '../helper/checkP'
 import HomeComponent from '../components/HomeComponent'
-import { setAll,setBusiness,setCrypto,setNature,setTechnology } from '../redux/actions/operateAction'
+import { setAll,setBusiness,setCrypto,setNature,setTechnology} from '../redux/actions/operateAction'
 export default function Home() {
 
-  const dispatch=useDispatch();
   const data=useSelector((store)=>store.data.activeTab);
   const fdata=useSelector((store)=>store.data);
-
-  
+  const dispatch=useDispatch();
   
   useEffect(()=>{
-    
+
     let type=category[data];
     let url;
     if(type==="All")
@@ -31,6 +29,7 @@ export default function Home() {
     return;
 
     fetch(url).then((res)=>res.json()).then((data)=>{
+
       let fetched=data.articles;
       if(type==="All")
       dispatch(setAll(fetched));

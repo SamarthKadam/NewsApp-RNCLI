@@ -5,15 +5,8 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function NewsList({data}) {
   const navigation=useNavigation();
-  let isSliced=0;
   if(data.urlToImage===null)
   data.urlToImage='https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?w=2000'
-
-  if(data.title.length>30)
-  {
-    data.title=data.title.slice(0,30)
-    isSliced=1;
-  }
 
   const PressHandler=()=>{
     navigation.navigate('Overview',{data:data})
@@ -28,7 +21,7 @@ export default function NewsList({data}) {
     <View style={styles.container}>
      <Image style={styles.imgStyle} source={{uri:data.urlToImage}}></Image>
       <View style={styles.contContainer}>
-        <Text style={styles.headline}>{data.title}{isSliced?'...':null}</Text>
+        <Text style={styles.headline}>{data.title}</Text>
         <Text style={{color:'grey',fontSize:12}}>{data.author?data.author:'unknown'}</Text>
       </View>
     </View>
@@ -39,20 +32,24 @@ const styles=StyleSheet.create({
     container:{
         flexDirection:'row',
         backgroundColor:Colors.light,
-        paddingHorizontal:12,
-        paddingVertical:20,
+        paddingHorizontal:2,
+        paddingVertical:10,
         borderRadius:20,
-        marginBottom:'2%'
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginBottom:'2%',
         },
     imgStyle:{
-        height:40,
-        width:70,
+        height:80,
+        width:80,
     },
     headline:{
         color:'black',
-        fontWeight:'600'
+        fontWeight:'700',
+        fontFamily:'serif',
     },
     contContainer:{
-        marginLeft:'2%'
+      marginLeft:10,
+      width:'75%',
     }
 })

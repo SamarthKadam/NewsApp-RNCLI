@@ -29,10 +29,11 @@ export default function Header({ishome}) {
   return (
     <View>
     <Appbar.Header style={{backgroundColor:'white'}}>
-       <Appbar.Content titleStyle={{color:Colors.primary,fontWeight:'700',fontSize:26,fontFamily:"Roboto"}} title="News" />
+       <Appbar.Content titleStyle={{color:Colors.primary,fontWeight:'700',fontSize:26,fontFamily:"Roboto"}} title="Fox News" />
        <Appbar.Action size={30} icon="bell-ring-outline"  onPress={()=>{Alert.alert('All caught up ✅')}} />
     </Appbar.Header>
-    <Text style={styles.dateelem}>Today,{monthNames[date.getMonth()]}{date.getDate()}th</Text>
+    {/* <Text style={styles.dateelem}>Today,{monthNames[date.getMonth()]}{date.getDate()}th</Text> */}
+    <Text style={styles.dateelem}>Powered by NewsAPI</Text>
     <Searchbar
     style={styles.searchelem}
     placeholderTextColor='grey'

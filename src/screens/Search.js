@@ -58,7 +58,7 @@ const styles=StyleSheet.create({
     container:{
         backgroundColor:'white',
         flex:1,
-        paddingHorizontal:20,
+        paddingHorizontal:10,
     },
     searchelem:{
         marginTop:'2%',

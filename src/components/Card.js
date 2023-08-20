@@ -5,15 +5,17 @@ import { useNavigation } from '@react-navigation/native';
 export default function Card({val}) {
 
   const navigation=useNavigation();
+  let title=val.title;
 
   if(val.urlToImage===null)
   {
     val.urlToImage='https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?w=2000'
   }
   let issliced=0;
-  if(val.title.length>70)
+  if(title.length>70)
   {
-    val.title=val.title.slice(0,80)
+
+    title=title.slice(0,80);
     issliced=1;
   }
   if(val.author?.length>25)
@@ -21,21 +23,17 @@ export default function Card({val}) {
     val.author=val.author.slice(0,25)
   }
 
-
   function handlePress()
   {
     navigation.navigate('Overview',{data:val});
   }
 
 
-
-
-
     return (
         <Pressable style={styles.container} android_ripple={{color:"rgba(0, 0, 0, .12)"}} onPress={handlePress}>
       <View>
         <Image style={styles.imgsetting} source={{uri:val.urlToImage}}></Image>
-      <Text style={styles.boldText}>{val.title}{issliced?'......':''}</Text>
+      <Text style={styles.boldText}>{title}{issliced?'....':''}</Text>
       <View style={styles.bcontainer}>
         <Text style={styles.smText}>World</Text>
         <Text style={styles.smText}>{val.author?val.author:'unknown'}</Text>

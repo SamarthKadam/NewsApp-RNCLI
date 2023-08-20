@@ -24,9 +24,9 @@ export default function HomeComponent({value}) {
     <StatusBar barStyle="dark-content"></StatusBar>
     <Header ishome={true}></Header>
     <Tabs></Tabs>
-    <MidHead key={1} title='Trending'></MidHead>
-    <CardContainerTop data={firstHalf}></CardContainerTop>
-    <MidHead key={2} title='Latest'></MidHead>
+    <MidHead key={1} val={0} title='Trending'></MidHead>
+    <CardContainerTop  data={firstHalf}></CardContainerTop>
+    <MidHead key={2} val={1} title='Latest'></MidHead>
     <CardContainerBottom data={secondHalf}></CardContainerBottom>
   </View>
   )

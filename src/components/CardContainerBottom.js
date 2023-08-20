@@ -3,7 +3,10 @@ import React,{useRef,useEffect} from 'react'
 import Card from './Card';
 import { ScrollView } from 'react-native';
 import Loading from '../utils/Loading';
+import { useSelector } from 'react-redux';
 export default function CardContainerBottom({data}) {
+
+
 
   const scrollRef=useRef();
   useEffect(()=>{
