@@ -11,11 +11,7 @@ export default function MoreStuff() {
     const fdata=useSelector(state=>state.data)
     const active=useSelector((store)=>store.data.activeTab);
     const array=fdata[category[active]];
-    console.log(array.length)
-    console.log(data);
     const values=array.slice(data*10,data*10+10)
-    console.log(values);
-
   return (
     <View style={styles.container}>
     <FlatList data={values} renderItem={(itemData,index)=>{

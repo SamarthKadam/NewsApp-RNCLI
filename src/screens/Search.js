@@ -14,7 +14,6 @@ const  Search=useCallback(()=>
 {
   setIsLoading(true);
   fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=133657eb75dd49f89487b83170831397`).then((res)=>res.json()).then((data)=>{
-
     setIsLoading(false);
     setResults((val)=>{
       let list=data.articles;

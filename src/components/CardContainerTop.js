@@ -19,7 +19,7 @@ export default function CardContainerTop({data}) {
     <View style={styles.container}>
       {!data&&<Loading></Loading>}
       {data&&data.map((val,id)=>{
-      return <Card key={val.url} val={val}></Card>
+      return <Card key={val.url+id} val={val}></Card>
       })}
     </View>
       </ScrollView>

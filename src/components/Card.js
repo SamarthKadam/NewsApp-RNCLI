@@ -12,7 +12,7 @@ export default function Card({val}) {
     val.urlToImage='https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?w=2000'
   }
   let issliced=0;
-  if(title.length>70)
+  if(title&&title.length>70)
   {
 
     title=title.slice(0,80);
